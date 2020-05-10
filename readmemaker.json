@@ -1,0 +1,15 @@
+{
+	"title": "ReadMe Maker",
+	"myBadge": "Finsihed",
+	"project-description": "THis project uses the command line interface to create a readme file for a github project. ",
+	"toch": "Create a Readme",
+	"toc1": "We start off with command line interface to ask questions about your project",
+	"toc2": "Then we dynamically load all of the info you have submitted into an md file with the name of readme.md",
+	"toc3": "We also retain this info in a json file to access at a later date. ",
+	"installation": "N/a",
+	"use": "Use for any github project.",
+	"lic": "Joeythekid031",
+	"cont": "Joeythekid031",
+	"tests": "None at this point",
+	"qs": "Whats the best way to load a table of contents? "
+}
