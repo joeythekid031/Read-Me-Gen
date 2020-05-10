@@ -2,8 +2,22 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 let  {render} = require('mustache');
 
-let template = `#{{title}}
-{{project-description}} `
+let template = `h1{{title}}
+{{project-description}}
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alt-H1
+======
+
+Alt-H2
+------ `
 
 // * The generated README includes the following sections: 
 //   * Title
@@ -29,27 +43,27 @@ inquirer.prompt([
     name: "project-description",
     message: "Describe the project..."
   },
-  {
-    type: "checkbox",
-    message: "What languages do you know?",
-    name: "stack",
-    choices: [
-      "HTML", 
-      "CSS", 
-      "JavaScript", 
-      "MySQL"
-    ]
-  },
-  {
-    type: "list",
-    message: "What is your preferred method of communication?",
-    name: "contact",
-    choices: [
-      "email",
-      "phone",
-      "telekinesis"
-    ]
-  }
+  // {
+  //   type: "checkbox",
+  //   message: "What languages do you know?",
+  //   name: "stack",
+  //   choices: [
+  //     "HTML", 
+  //     "CSS", 
+  //     "JavaScript", 
+  //     "MySQL"
+  //   ]
+  // },
+  // {
+  //   type: "list",
+  //   message: "What is your preferred method of communication?",
+  //   name: "contact",
+  //   choices: [
+  //     "email",
+  //     "phone",
+  //     "telekinesis"
+  //   ]
+  // }
 ]).then(function(data) {
 
   var filename = data.title.toLowerCase().split(' ').join('') + ".json";
