@@ -4,12 +4,9 @@ const  {render} = require('mustache');
 
 
 let template = `
-# The largest heading
-## The second largest heading
-###### The smallest heading
 ##{{title}}
 Description: {{project-description}}
-Table of Contents:  {{toc}}
+Table of Contents: ..* {{toc}}
 Installation: {{installation}}
 Usage: {{use}}
 License: {{lic}}
@@ -47,6 +44,36 @@ inquirer.prompt([
     name: "toc",
     message: "Enter your table of contents..."
   },
+  {
+    type: "input",
+    name: "installation",
+    message: "Installation..."
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "Usage?"
+  },
+  {
+    type: "input",
+    name: "lic",
+    message: "Usage license?"
+  },
+  {
+    type: "input",
+    name: "cont",
+    message: "Enter your contributors"
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "Tests for the project?"
+  },
+  {
+    type: "input",
+    name: "qs",
+    message: "What questions do you have?"
+  },
   // {
   //   type: "checkbox",
   //   message: "What languages do you know?",
@@ -72,7 +99,7 @@ inquirer.prompt([
 
   var filename = data.title.toLowerCase().split(' ').join('') + ".json";
   let output = render(template, data)
-  fs.writeFileSync("./readme", output)
+  fs.writeFileSync("./readme.md", output)
   
   
   
