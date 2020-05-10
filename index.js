@@ -7,7 +7,7 @@ let template = `
 
 ##{{title}}
 Description: {{project-description}}
-Table of Contents: {{toc}}
+Table of Contents: ..* {{toc}}
 Installation: {{installation}}
 Usage: {{use}}
 License: {{lic}}
