@@ -4,10 +4,12 @@ const  {render} = require('mustache');
 
 
 let template = `
-
+# The largest heading
+## The second largest heading
+###### The smallest heading
 ##{{title}}
 Description: {{project-description}}
-Table of Contents: ..* {{toc}}
+Table of Contents:  {{toc}}
 Installation: {{installation}}
 Usage: {{use}}
 License: {{lic}}
