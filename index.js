@@ -1,23 +1,20 @@
 const inquirer = require("inquirer");
 const fs = require('fs');
-let  {render} = require('mustache');
+const  {render} = require('mustache');
 
-let template = `h1{{title}}
-{{project-description}}
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
 
-Alternatively, for H1 and H2, an underline-ish style:
+let template = `
 
-Alt-H1
-======
-
-Alt-H2
------- `
+##{{title}}
+Description: {{project-description}}
+Table of Contents: {{toc}}
+Installation: {{installation}}
+Usage: {{use}}
+License: {{lic}}
+Contributing:{{cont}}
+Tests: {{tests}}
+Questions: {{qs}}
+`
 
 // * The generated README includes the following sections: 
 //   * Title
@@ -42,6 +39,11 @@ inquirer.prompt([
     type: "input",
     name: "project-description",
     message: "Describe the project..."
+  },
+  {
+    type: "input",
+    name: "toc",
+    message: "Enter your table of contents..."
   },
   // {
   //   type: "checkbox",
